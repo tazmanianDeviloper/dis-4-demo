@@ -1,7 +1,7 @@
 import {useState, memo} from "react";
 
 function ChildComponent2(){
-    console.log("ChildComponent2 just re-rendered");
+    console.log("ChildComponent-2 is rendered");
     const [color, setColor] = useState<string>("#f4e7ae");
     const changeColor = () => {
         const newColor = "#" + Math.floor(Math.random() * 0xffffff).toString(16);
@@ -17,4 +17,3 @@ function ChildComponent2(){
 };
 
 export default memo(ChildComponent2);
-// do we like this ? NO! we want to change the parent layer's background color!!

@@ -1,18 +1,19 @@
-import {useEffect, useState} from "react";
+import {memo, useEffect, useState} from "react";
 
-export function ChildComponent1(){
-    console.log("ChildComponent1 just re-rendered");
+function ChildComponent1(){
+
+    console.log("ChildComponent-1 is rendered");
 
     const [count, setCount] = useState<number>(0);
 
     function increment(){
         setCount(count + 1);
-        console.log("my count is", count);
+        // console.log("my count is", count);
         // logs the old value because state updates are async
     }
 
     useEffect(() => {
-        console.log("my new count is", count);
+        // console.log("my new count is", count);
     }, [count]);
 
     return (
@@ -27,3 +28,5 @@ export function ChildComponent1(){
         </div>
     );
 }
+
+export default memo(ChildComponent1);
